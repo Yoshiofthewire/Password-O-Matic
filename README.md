@@ -1,28 +1,41 @@
-Password-O-Matic
-Password-O-Matic is a secure, web-based password generation tool built with Go. It provides users with a variety of strong and customizable password options.
-Features
-This application offers three distinct types of password generation to suit different security and readability needs:
-1. Normal Passwords
-Normal passwords are designed for high security with a structured approach:
-Length: Over 20 characters
-Structure: Two words combined with random characters
-Complexity: Minimum of:
-2 Uppercase letters
-2 Lowercase letters
-2 Numbers
-2 Symbols
-2. Readable Passwords (Simplified)
-Readable passwords are easier to remember while maintaining complexity:
-Structure: Three words with random capitalization
-Complexity: Followed by at least two symbols and a four-digit number (between 1000 and 10000)
-3. Random Passwords
-Random passwords are highly unpredictable character strings:
-Length: Between 20 and 27 characters
-Complexity: Minimum of:
-2 Uppercase letters
-2 Lowercase letters
-2 Numbers
-2 Symbols
-Prerequisites and Setup
-The web interface is secured by SSL using auto-generated self-signed certificates.
-Important Note: You must provide your own dictionary file named dictionary.txt. This file needs to contain a minimum of 10,000 words for the word-based password generators to function correctly.
+# Password-O-Matic
+
+Password-O-Matic is a secure, web-based password generation tool built with Go. It provides users with a variety of strong and customizable password options suitable for different security and memorability requirements.
+
+## Features
+
+This application offers three distinct password generation modes:
+
+### 1. Normal Passwords
+- Purpose: High-security, structured passwords.
+- Length: Over 20 characters.
+- Structure: Two dictionary words combined with random characters.
+- Complexity requirements:
+    - At least 2 uppercase letters
+    - At least 2 lowercase letters
+    - At least 2 numbers
+    - At least 2 symbols
+
+### 2. Readable Passwords (Simplified)
+- Purpose: Easier to remember while maintaining reasonable complexity.
+- Structure: Three dictionary words with random capitalization.
+- Complexity: Appended with at least two symbols and a four-digit number (random between 1000 and 9999).
+
+### 3. Random Passwords
+- Purpose: Highly unpredictable, fully-random character strings.
+- Length: 20–27 characters.
+- Complexity requirements:
+    - At least 2 uppercase letters
+    - At least 2 lowercase letters
+    - At least 2 numbers
+    - At least 2 symbols
+
+## Prerequisites & Setup
+
+- The web interface is secured via SSL using auto-generated self-signed certificates.
+- You must provide a dictionary file named `dictionary.txt`.
+    - The file must contain a minimum of 10,000 words for the word-based generators (Normal and Readable) to function correctly.
+
+## Notes
+- Self-signed certificates are suitable for local testing or internal use. For production deployment, replace them with certificates issued by a trusted Certificate Authority.
+- Ensure `dictionary.txt` is encoded and formatted consistently (one word per line) to avoid issues during password generation.
